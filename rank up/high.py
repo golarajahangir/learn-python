@@ -1,0 +1,41 @@
+def high(x):
+    score = {
+        "a": 1,
+        "b": 2,
+        "c": 3,
+        "d": 4,
+        "e": 5,
+        "f": 6,
+        "g": 7,
+        "h": 8,
+        "i": 9,
+        "j": 10,
+        "k": 11,
+        "l": 12,
+        "m": 13,
+        "n": 14,
+        "o": 15,
+        "p": 16,
+        "q": 17,
+        "r": 18,
+        "s": 19,
+        "t": 20,
+        "u": 21,
+        "v": 22,
+        "w": 23,
+        "x": 24,
+        "y": 25,
+        "z": 26,
+    }
+    words = x.split()
+    sum_lists = []
+    for word in words:
+        sum = 0
+        for letter in word:
+            sum = sum + score[letter]
+        sum_lists.append((word, sum))
+    max_tuple = max(sum_lists, key=lambda tup: tup[1])
+    return max_tuple[0]
+
+
+high("what time are we climbing up the volcano")
